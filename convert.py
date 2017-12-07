@@ -14,7 +14,27 @@ def run():
     tree = ET.parse('culture_data.xml')
     root = tree.getroot()
     output_csv = open('culture_data.csv', 'w', encoding='utf-8')
-    csv_writer = csv.writer(output_csv)
+    csv_writer = csv.writer(output_csv, lineterminator='\n')
+    csv_writer.writerow([
+        'title',
+        'description',
+        'disabled_access',
+        'institution_address',
+        'postcode',
+        'longitude',
+        'latitude',
+        'institution_type',
+        'usage_conditions',
+        'administrative_status',
+        'jurisdiction',
+        'region',
+        'referral',
+        'website',
+        'timestamp',
+        'email',
+        'fax',
+        'voice'
+    ])
     for institution in root[1].findall('doc'):
         # loop through the strings
         inst = {
@@ -128,54 +148,38 @@ def run():
 
         for prop in institution.findall('date'):
             if prop.get('name') == 'timestamp':
-                inst['timestamp'] = prop[0].text
+                inst['timestamp'] = prop.text
 
         for prop in institution.findall('double'):
             if prop.get('name') == 'lat':
-                inst['latitude'] = prop[0].text
+                inst['latitude'] = prop.text
             if prop.get('name') == 'lng':
-                inst['longitude'] = prop[0].text
+                inst['longitude'] = prop.text
 
         row = [
-            inst['internal_id'],
-            inst['internal_record_link'],
-            inst['authority'],
-            inst['authority_name'],
-            inst['cg_original_record_prefix'],
-            inst['cg_schema_id'],
-            inst['cg_schema_name'],
-            inst['cg_schema_type'],
-            inst['description'],
-            inst['identifier'],
-            inst['related_link'],
             inst['title'],
-            inst['dcmi_type'],
-            inst['is_part_of_all_ids'],
-            inst['is_part_of_all_names'],
+            inst['description'],
             inst['disabled_access'],
             inst['institution_address'],
             inst['postcode'],
             inst['longitude'],
             inst['latitude'],
-            inst['sector'],
             inst['institution_type'],
             inst['usage_conditions'],
             inst['administrative_status'],
-            inst['alternative_name'],
             inst['jurisdiction'],
             inst['region'],
             inst['referral'],
             inst['website'],
-            inst['thumbnail'],
-            inst['record_type'],
-            inst['service_provider'],
             inst['timestamp'],
             inst['email'],
             inst['fax'],
             inst['voice']
         ]
-        csv_writer.writerow(row)
+        if inst['title'] is not None and inst['title'] != '':
+            csv_writer.writerow(row)
 
     output_csv.close()
+
 
 run()
