@@ -9,7 +9,7 @@ There is [a very interesting blog post](https://museumscomputergroup.org.uk/cult
 
 While the culture grid's API is still running, this repository is a simple converter to convert the date held on institutions into CSV format for repurposing (and correcting as it's out of date).
 
-See culture_data.csv for an extract.
+See [culture_data.csv](https://github.com/LibrariesHacked/culture-grid/blob/master/culture_data.csv) for an extract.
 
 Original data extracted from this XML web service:
 
