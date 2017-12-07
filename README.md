@@ -7,7 +7,7 @@ The culture grid was an aggregation platform run by the Collections Trust, and h
 
 There is [a very interesting blog post](https://museumscomputergroup.org.uk/culture-grid/) by Nick Poole, previously CEO of the Collections Trust, that gives some background to this, the wider work of aggregating museum data, and the People's Network.
 
-While the culture grid's API is still running, this repository is a simple converter to convert the date held on institutions into CSV format for repurposing (and correcting as it's out of date).
+While the culture grid's API is still running, this repository is a simple converter to convert the data held on institutions into CSV format for repurposing (and correcting as it's out of date).
 
 See [culture_data.csv](https://github.com/LibrariesHacked/culture-grid/blob/master/culture_data.csv) for an extract.
 
