@@ -1,7 +1,8 @@
-Culture Grid
-============
+## Culture Grid
 
-Converting and storing culture grid web service data on institutions for use in other projects.
+Converting and storing culture grid web service data on institutions for use in other projects - project now archived.
+
+### Background
 
 The culture grid was an aggregation platform run by the Collections Trust, and hosted web services that provided details of cultural instititions, collections, and more.
 
@@ -13,7 +14,6 @@ See [culture_data.csv](https://github.com/LibrariesHacked/culture-grid/blob/mast
 
 Original data extracted from [this XML web service](http://www.culturegrid.org.uk/index/select/?q=dcterms.isPartOf:MLAInstitutions&version=2.2&start=0&rows=100000&indent=on)
 
-Licence
---------
+### Licence
 
-The data was provided by the Culture Grid as Open Government Licence.
+The data was provided by the Culture Grid as Open Government Licence. Any code in this repository is licensed with the MIT Licence.
